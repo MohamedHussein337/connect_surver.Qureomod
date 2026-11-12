@@ -1,0 +1,250 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b16">
+<title>MEDOX | Secure Access</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #f5f5ff;
+  background:
+    radial-gradient(circle at 15% 10%, #292044, transparent 35%),
+    radial-gradient(circle at 90% 85%, #17234a, transparent 35%),
+    #080a13;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  padding: 0 8px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.powered {
+  color: #a98aff;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.card {
+  padding: 40px 28px;
+  border-radius: 32px;
+  border: 1px solid #303144;
+  background: linear-gradient(145deg, #191c2e, #0e101c);
+  box-shadow: 0 25px 70px #0008;
+}
+
+.tag {
+  text-align: center;
+  color: #b99cff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 39px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.description {
+  color: #969bb5;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 17px 0 30px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 9px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #dcdcf0;
+}
+
+input {
+  width: 100%;
+  height: 58px;
+  padding: 0 17px;
+  border-radius: 16px;
+  border: 1px solid #36384d;
+  background: #ffffff0a;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #9360ff;
+  box-shadow: 0 0 0 3px #9360ff22;
+}
+
+input::placeholder {
+  color: #777d96;
+}
+
+button {
+  width: 100%;
+  height: 59px;
+  margin-top: 27px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #9858f5, #527dff);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #7555ff40;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+.error {
+  display: none;
+  color: #ff9eae;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.footer {
+  text-align: center;
+  color: #777d96;
+  font-size: 11px;
+  margin-top: 28px;
+  letter-spacing: 1px;
+}
+
+@media(max-width:480px) {
+  .card {
+    padding: 35px 22px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top">
+    <div class="logo">MEDOX</div>
+    <div class="powered">POWERED BY MEDOX</div>
+  </div>
+
+  <div class="card">
+
+    <div class="tag">AUTHORIZED ACCESS</div>
+
+    <h1>Welcome to<br>MEDOX</h1>
+
+    <p class="description">
+      Sign in with your access details
+      to continue to your destination.
+    </p>
+
+    <form id="loginForm">
+
+      <label for="username">USERNAME</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter your username"
+        required
+      >
+
+      <label for="password">PASSWORD</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      >
+
+      <button type="submit">
+        CONTINUE →
+      </button>
+
+      <div class="error" id="error">
+        Incorrect username or password.
+        Please try again.
+      </div>
+
+    </form>
+
+    <div class="footer">
+      SECURE PORTAL · MEDOX ACCESS
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.getElementById("loginForm")
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const username =
+    document.getElementById("username").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  if (
+    username === "MEDOX&78" &&
+    password === "2011"
+  ) {
+
+    window.location.href =
+    "https://cacs.qureosolver.xyz";
+
+  } else {
+
+    document.getElementById("error")
+    .style.display = "block";
+
+  }
+
+});
+</script>
+
+</body>
+</html>
